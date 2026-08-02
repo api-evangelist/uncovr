@@ -1,0 +1,14 @@
+{
+  "provider": "uncovr",
+  "sources": [
+    "uncovr-inference-v3-backwards-compatible-api-openapi.yml"
+  ],
+  "outputs": [
+    "uncovr-inference-v3-backwards-compatible-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

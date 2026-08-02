@@ -1,0 +1,8 @@
+generated: '2026-07-21'
+method: generated
+skills:
+  - file: uncovr-generate-operative-report.md
+    name: Generate an operative report from surgical embeddings
+    api: openapi/uncovr-api-openapi-original.json
+    operations:
+      - process_embeddings_compat_v1_inference__operation__process_embeddings_post

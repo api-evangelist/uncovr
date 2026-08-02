@@ -1,0 +1,38 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/uncovr-api-openapi-original.json
+description: >-
+  Cross-cutting request/response semantics derived from the served OpenAPI
+  3.1 document. Uncovr publishes no developer documentation, so only what the
+  spec itself declares is captured here. No idempotency contract, pagination,
+  field expansion, metadata, request-id tracing, or rate-limit signaling is
+  documented or visible in the spec.
+authentication:
+  style: http-bearer
+  artifact: authentication/uncovr-authentication.yml
+versioning:
+  scheme: uri-path
+  current: v1
+  evidence: single path /v1/inference/{operation}/process_embeddings
+idempotency: null
+pagination: null
+field_expansion: null
+metadata: null
+request_tracing: null
+rate_limit_signaling: null
+error_envelope:
+  shapes:
+    - HTTPValidationError (422)
+    - IngestionErrorResponse (error_code + detail, in-band in the 200 union)
+  artifact: errors/uncovr-problem-types.yml
+request_conventions:
+  - The inference endpoint takes multipart/form-data with a required binary
+    `file` field (embeddings), plus query parameters case_id (uuid),
+    video_id (integer, default 1), user_id, device_id.
+  - The path parameter `operation` is an enum of supported procedures
+    (cholecystectomy, hiatal-hernia).
+async_pattern:
+  - Responses discriminate between synchronous results (IngestionResponse),
+    accepted-for-processing (IngestionAcceptedResponse, code
+    ingestion_accepted), and errors (IngestionErrorResponse) inside a single
+    200 anyOf union.

@@ -1,7 +1,25 @@
 aid: uncovr
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/uncovr.png
 name: Uncovr
-description: Uncovr is a company surfaced as a portfolio company of seedcamp and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: Uncovr is a surgical AI company building a foundation model for surgery.
+  Its platform captures video from any operating-room source (laparoscopic, robotic,
+  or other devices), analyzes procedures in real time, and automatically generates
+  operative reports, CPT billing codes, and structured clinical intelligence, with
+  a zero-PHI on-device anonymization architecture and EHR integration. Uncovr publishes
+  no developer portal or SDKs, but serves a live OpenAPI 3.1 inference API (with
+  Swagger UI) at api.uncovr.ai, and publishes an llms.txt on its website.
 url: https://raw.githubusercontent.com/api-evangelist/uncovr/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,16 +28,74 @@ x-backed-by:
 x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 13
+  pass: local-v1
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Healthcare
+- Surgery
+- Artificial Intelligence
+- Computer Vision
+- Medical Documentation
+- Medical Billing
+- Clinical Intelligence
+apis:
+- aid: uncovr:uncovr-inference-v3-backwards-compatible-api
+  name: Uncovr Inference (V3, Backwards Compatible) API
+  description: >-
+    The Inference (V3, Backwards Compatible) API from Uncovr — 1 operation(s) for inference (v3, backwards
+    compatible).
+  humanURL: https://api.uncovr.ai/docs
+  baseURL: https://api.uncovr.ai
+  tags:
+  - Inference (V3, Backwards Compatible)
+  properties:
+  - type: OpenAPI
+    url: openapi/uncovr-inference-v3-backwards-compatible-api-openapi.yml
+  - type: Documentation
+    url: https://api.uncovr.ai/docs
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: AgenticAccess
+  url: agentic-access/uncovr-agentic-access.yml
+- type: Authentication
+  url: authentication/uncovr-authentication.yml
 - type: Website
-  url: http://uncovr.ai
+  url: https://www.uncovr.ai/
+- type: LLMsTxt
+  url: llms/uncovr-llms.txt
+- type: WellKnown
+  url: well-known/uncovr-well-known.yml
+- type: DomainSecurity
+  url: security/uncovr-domain-security.yml
+- type: TermsOfService
+  url: https://www.uncovr.ai/legal/terms-conditions
+- type: PrivacyPolicy
+  url: https://www.uncovr.ai/legal/privacy-policy
+- type: Support
+  url: https://www.uncovr.ai/contact
+- type: Careers
+  url: https://www.uncovr.ai/careers
+- type: LinkedIn
+  url: https://www.linkedin.com/company/uncovr-uncover/
+- type: MCPServer
+  url: mcp/uncovr-mcp.yml
+- type: ErrorCatalog
+  url: errors/uncovr-problem-types.yml
+- type: Conformance
+  url: conformance/uncovr-conformance.yml
+- type: Conventions
+  url: conventions/uncovr-conventions.yml
+- type: DataModel
+  url: data-model/uncovr-data-model.yml
+- type: AgentSkill
+  url: skills/_index.yml

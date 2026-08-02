@@ -1,0 +1,18 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/uncovr-api-openapi-original.json
+description: >-
+  No official Uncovr MCP server was found (none in docs, npm, or the MCP
+  registry surface we checked). Candidate tool list derived from the served
+  OpenAPI 3.1 operations at https://api.uncovr.ai/openapi.json.
+server:
+  name: uncovr
+  transport: http
+tools:
+  - name: process_embeddings
+    description: Submit an embeddings file for a supported surgical operation
+      (cholecystectomy or hiatal-hernia) and receive an operative report with
+      case assessments, an accepted-for-processing acknowledgment, or a
+      structured ingestion error.
+    source_operation: openapi/uncovr-api-openapi-original.json#process_embeddings_compat_v1_inference__operation__process_embeddings_post

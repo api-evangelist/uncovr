@@ -1,0 +1,37 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/uncovr-api-openapi-original.json
+format: custom-json
+description: >-
+  Error surface derived from the served OpenAPI 3.1 document. Uncovr does not
+  use RFC 9457 application/problem+json; errors come back as plain
+  application/json in two shapes — FastAPI's HTTPValidationError envelope on
+  422, and a domain-specific IngestionErrorResponse (error_code + detail)
+  that can be returned in the 200 union of the inference endpoint. No error
+  code registry is published in docs.
+envelopes:
+  - name: HTTPValidationError
+    schema: '#/components/schemas/HTTPValidationError'
+    fields:
+      - name: detail
+        type: array of ValidationError (loc, msg, type, input, ctx)
+  - name: IngestionErrorResponse
+    schema: '#/components/schemas/IngestionErrorResponse'
+    fields:
+      - name: error_code
+        type: string
+      - name: detail
+        type: string
+problems:
+  - status: 422
+    title: Validation Error
+    media_type: application/json
+    schema: '#/components/schemas/HTTPValidationError'
+    source_operation: openapi/uncovr-api-openapi-original.json#process_embeddings_compat_v1_inference__operation__process_embeddings_post
+  - status: 200
+    title: Ingestion error (in-band)
+    media_type: application/json
+    schema: '#/components/schemas/IngestionErrorResponse'
+    note: Returned inside the 200 anyOf union alongside IngestionResponse and
+      IngestionAcceptedResponse; consumers must discriminate on error_code.
+    source_operation: openapi/uncovr-api-openapi-original.json#process_embeddings_compat_v1_inference__operation__process_embeddings_post

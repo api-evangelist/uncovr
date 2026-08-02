@@ -1,0 +1,36 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Uncovr API
+  version: 1.0.0
+extends: openapi/uncovr-api-openapi-original.json
+actions:
+  - target: $.info
+    update:
+      description: >-
+        Uncovr's inference API, publicly served at api.uncovr.ai. Accepts an
+        embeddings file for a supported surgical operation and returns an
+        operative report with case assessments, an accepted-for-processing
+        acknowledgment, or a structured ingestion error. Bearer-token
+        authenticated; not publicly documented beyond the served spec.
+      contact:
+        name: Uncovr
+        url: https://www.uncovr.ai/contact
+  - target: $.info
+    update:
+      x-apievangelist:
+        provider: uncovr
+        harvested: '2026-07-21'
+        source: https://api.uncovr.ai/openapi.json
+  - target: $
+    update:
+      servers:
+        - url: https://api.uncovr.ai
+  - target: $.paths['/v1/inference/{operation}/process_embeddings'].post
+    update:
+      description: >-
+        Submit an embeddings file (multipart form field `file`) for a
+        supported operation (cholecystectomy, hiatal-hernia). The 200 response
+        is a union of IngestionResponse (report + assessments),
+        IngestionAcceptedResponse (queued for async processing), and
+        IngestionErrorResponse (error_code + detail) — discriminate on the
+        returned fields.

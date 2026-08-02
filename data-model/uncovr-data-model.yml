@@ -1,0 +1,36 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/uncovr-api-openapi-original.json
+description: >-
+  Entity graph derived from the served OpenAPI 3.1 components.schemas ($ref
+  links). The public surface is small; the model centers on an ingestion
+  result carrying an operative report and per-entity case assessments.
+entities:
+  - name: IngestionResponse
+    description: Result of processing an embeddings file — an operative report
+      (string) plus a list of case assessments.
+  - name: CaseAssessment
+    description: A qualitative verdict about one entity/aspect of the case
+      (name, finding, severity normal|mild|moderate|severe, evidence_frame,
+      rationale).
+  - name: IngestionAcceptedResponse
+    description: Acknowledgment that input was accepted and submitted for
+      asynchronous processing (code ingestion_accepted).
+  - name: IngestionErrorResponse
+    description: Structured ingestion error (error_code + detail).
+  - name: Operation
+    description: Enum of supported surgical operations (cholecystectomy,
+      hiatal-hernia).
+  - name: HTTPValidationError
+    description: FastAPI 422 validation envelope.
+  - name: ValidationError
+    description: Single validation failure (loc, msg, type, input, ctx).
+relationships:
+  - from: IngestionResponse
+    to: CaseAssessment
+    kind: has_many
+    via: assessments
+  - from: HTTPValidationError
+    to: ValidationError
+    kind: has_many
+    via: detail

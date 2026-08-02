@@ -1,0 +1,12 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/uncovr-api-openapi-original.json
+summary:
+  types:
+  - http
+schemes:
+- name: HTTPBearer
+  type: http
+  scheme: bearer
+  sources:
+  - openapi/uncovr-api-openapi-original.json

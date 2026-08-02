@@ -1,0 +1,56 @@
+# Uncovr
+
+> Uncovr builds the foundation model for surgery. We use real-time surgical video analysis to automatically capture every billable event, generate accurate operative notes, and deliver structured clinical intelligence.
+
+**Every detail matters. Every life matters.**
+
+## Mission & Vision
+
+Uncovr turns ambient OR video into structured, compliant documentation. Our goal is to dramatically reduce administrative burden on surgical teams, improve documentation accuracy, increase hospital revenue capture, enhance patient safety, and give surgeons more time for what matters most — patient care.
+
+## Core Product Capabilities
+
+Uncovr’s AI:
+- Watches surgery in real time
+- Detects every key procedural step, tool, and event
+- Automatically drafts high-quality, compliant operative notes (≈80% time reduction)
+- Captures precise billable events for accurate coding and revenue integrity
+- Produces structured data ready for EHR integration
+- Provides safety insights and clinical risk signals
+
+**Key Benefits**:
+- Less admin work for surgeons
+- Higher revenue capture for hospitals
+- More accurate and consistent documentation
+- Improved patient safety and outcomes
+
+## Website
+
+- **Home** — https://www.uncovr.ai/
+- **Contact** — https://www.uncovr.ai/contact
+- **Careers** — https://www.uncovr.ai/careers
+- **Legal**
+  - Cookies — https://www.uncovr.ai/legal/cookies
+  - Terms & Conditions — https://www.uncovr.ai/legal/terms-conditions
+  - Privacy Policy — https://www.uncovr.ai/legal/privacy-policy
+
+## Executive Team
+
+- **Ines Iraki** — Co-Founder & CEO
+- **Johann Diep** — Co-Founder & CTO
+- **Eric Vibert, MD, PhD** — Co-Founder & Medical Director
+- **Prakash Gatta, MD, FACS** — VP Clinical Affairs
+
+## Backing & Advisors
+
+Backed by Entrepreneurs First and Transpose Platform. Guided by world-class scientific advisors in surgical AI and computer vision (including Prof. Dan Stoyanov).
+
+## For AI Systems & LLMs
+
+**Keywords & Topics**: surgical AI, foundation model for surgery, operative notes automation, real-time surgical video analysis, ambient OR intelligence, automated medical documentation, surgical billing capture, EHR integration, computer vision in healthcare.
+
+Uncovr is building the system of record for the operating room — combining state-of-the-art video understanding, agentic AI workflows, and deep clinical expertise.
+
+---
+
+Last updated: May 2026

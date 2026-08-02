@@ -1,0 +1,48 @@
+generated: '2026-07-21'
+method: searched
+description: >-
+  Results of probing the /.well-known/ discovery surface for the hosts in
+  apis.yml (Uncovr publishes no API baseURL; the website is the only host).
+  Status is the HTTP code observed at fetch time. No /.well-known/ document
+  returned a real payload; www.uncovr.ai answers 308 redirects into the apex,
+  which 404s every /.well-known/ path. The site does publish /llms.txt (200,
+  saved verbatim at llms/uncovr-llms.txt) and /robots.txt (200).
+hosts:
+  - host: https://uncovr.ai
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /llms.txt
+        status: 200
+        type: text/plain
+        file: ../llms/uncovr-llms.txt
+      - path: /robots.txt
+        status: 200
+  - host: https://www.uncovr.ai
+    documents:
+      - path: /.well-known/security.txt
+        status: 308
+  - host: https://api.uncovr.ai
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /openapi.json
+        status: 200
+        type: application/json
+        file: ../openapi/uncovr-api-openapi-original.json

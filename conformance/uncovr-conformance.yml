@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/uncovr-api-openapi-original.json
+description: >-
+  Standards conformance derived from the served OpenAPI 3.1 document and the
+  public website. Uncovr publishes no compliance program, certifications, or
+  trust center at this time (probed 2026-07-21); the website claims a
+  zero-PHI on-device anonymization architecture but names no certification.
+standards:
+  - id: openapi-3.1
+    conforms: true
+    evidence: live spec at https://api.uncovr.ai/openapi.json declares openapi 3.1.0
+  - id: http-bearer-auth
+    conforms: true
+    evidence: securitySchemes.HTTPBearer type http scheme bearer, applied to the inference operation
+  - id: oauth2
+    conforms: false
+    evidence: no oauth2 securityScheme in the spec; no OAuth docs published
+  - id: oidc
+    conforms: false
+    evidence: /.well-known/openid-configuration returns 404 on uncovr.ai and api.uncovr.ai
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: errors use plain application/json (HTTPValidationError, IngestionErrorResponse), not application/problem+json
+  - id: rfc9116-security-txt
+    conforms: false
+    evidence: /.well-known/security.txt returns 404 on uncovr.ai and api.uncovr.ai
+  - id: fhir-r4
+    conforms: false
+    evidence: no FHIR resource shapes in the spec despite the healthcare domain
+  - id: llms-txt
+    conforms: true
+    evidence: https://uncovr.ai/llms.txt returns 200 with a real llms.txt document (saved at llms/uncovr-llms.txt)
