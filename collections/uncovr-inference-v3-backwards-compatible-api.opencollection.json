@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Uncovr Inference (V3, Backwards Compatible) Inference (V3, Backwards Compatible) Inference (V3, Backwards Compatible) API",
+    "version": "0.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Inference (V3, Backwards Compatible)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Process Embeddings Compat",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/inference/:operation/process_embeddings",
+            "params": [
+              {
+                "name": "operation",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "case_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "video_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "device_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": []
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Process Embeddings Compat"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
