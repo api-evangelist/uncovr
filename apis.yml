@@ -53,7 +53,7 @@ tags:
 - Healthcare
 - Surgery
 - Artificial Intelligence
-- Computer-Vision
+- Computer Vision
 - Medical Documentation
 - Medical Billing
 - Clinical Intelligence
@@ -66,6 +66,7 @@ tags_raw:
 - Medical Documentation
 - Medical Billing
 - Clinical Intelligence
+- Computer-Vision
 apis:
 - aid: uncovr:uncovr-inference-v3-backwards-compatible-api
   name: Uncovr Inference (V3, Backwards Compatible) API

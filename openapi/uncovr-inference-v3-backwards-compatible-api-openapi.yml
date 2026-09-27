@@ -74,15 +74,31 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
 components:
   schemas:
-    HTTPValidationError:
+    IngestionErrorResponse:
       properties:
+        error_code:
+          type: string
+          title: Error Code
         detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
+          type: string
           title: Detail
       type: object
-      title: HTTPValidationError
+      required:
+      - error_code
+      - detail
+      title: IngestionErrorResponse
+    IngestionAcceptedResponse:
+      properties:
+        code:
+          type: string
+          title: Code
+          default: ingestion_accepted
+        detail:
+          type: string
+          title: Detail
+          default: Input accepted and submitted for processing.
+      type: object
+      title: IngestionAcceptedResponse
     IngestionResponse:
       properties:
         report:
@@ -99,6 +115,15 @@ components:
           title: Assessments
       type: object
       title: IngestionResponse
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
     CaseAssessment:
       properties:
         name:
@@ -133,48 +158,6 @@ components:
       - finding
       title: CaseAssessment
       description: A qualitative verdict about one entity/aspect of the case (not a time span).
-    IngestionErrorResponse:
-      properties:
-        error_code:
-          type: string
-          title: Error Code
-        detail:
-          type: string
-          title: Detail
-      type: object
-      required:
-      - error_code
-      - detail
-      title: IngestionErrorResponse
-    IngestionAcceptedResponse:
-      properties:
-        code:
-          type: string
-          title: Code
-          default: ingestion_accepted
-        detail:
-          type: string
-          title: Detail
-          default: Input accepted and submitted for processing.
-      type: object
-      title: IngestionAcceptedResponse
-    Operation:
-      type: string
-      enum:
-      - cholecystectomy
-      - hiatal-hernia
-      title: Operation
-      description: List of supported operations.
-    Body_process_embeddings_compat_v1_inference__operation__process_embeddings_post:
-      properties:
-        file:
-          type: string
-          contentMediaType: application/octet-stream
-          title: File
-      type: object
-      required:
-      - file
-      title: Body_process_embeddings_compat_v1_inference__operation__process_embeddings_post
     ValidationError:
       properties:
         loc:
@@ -201,6 +184,23 @@ components:
       - msg
       - type
       title: ValidationError
+    Operation:
+      type: string
+      enum:
+      - cholecystectomy
+      - hiatal-hernia
+      title: Operation
+      description: List of supported operations.
+    Body_process_embeddings_compat_v1_inference__operation__process_embeddings_post:
+      properties:
+        file:
+          type: string
+          contentMediaType: application/octet-stream
+          title: File
+      type: object
+      required:
+      - file
+      title: Body_process_embeddings_compat_v1_inference__operation__process_embeddings_post
   securitySchemes:
     HTTPBearer:
       type: http
