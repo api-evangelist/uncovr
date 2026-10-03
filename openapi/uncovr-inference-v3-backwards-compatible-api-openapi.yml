@@ -74,6 +74,42 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
 components:
   schemas:
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    Body_process_embeddings_compat_v1_inference__operation__process_embeddings_post:
+      properties:
+        file:
+          type: string
+          contentMediaType: application/octet-stream
+          title: File
+      type: object
+      required:
+      - file
+      title: Body_process_embeddings_compat_v1_inference__operation__process_embeddings_post
     IngestionErrorResponse:
       properties:
         error_code:
@@ -87,6 +123,13 @@ components:
       - error_code
       - detail
       title: IngestionErrorResponse
+    Operation:
+      type: string
+      enum:
+      - cholecystectomy
+      - hiatal-hernia
+      title: Operation
+      description: List of supported operations.
     IngestionAcceptedResponse:
       properties:
         code:
@@ -99,31 +142,6 @@ components:
           default: Input accepted and submitted for processing.
       type: object
       title: IngestionAcceptedResponse
-    IngestionResponse:
-      properties:
-        report:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Report
-        assessments:
-          anyOf:
-          - items:
-              $ref: '#/components/schemas/CaseAssessment'
-            type: array
-          - type: 'null'
-          title: Assessments
-      type: object
-      title: IngestionResponse
-    HTTPValidationError:
-      properties:
-        detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
-          title: Detail
-      type: object
-      title: HTTPValidationError
     CaseAssessment:
       properties:
         name:
@@ -158,49 +176,31 @@ components:
       - finding
       title: CaseAssessment
       description: A qualitative verdict about one entity/aspect of the case (not a time span).
-    ValidationError:
+    IngestionResponse:
       properties:
-        loc:
+        report:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Report
+        assessments:
+          anyOf:
+          - items:
+              $ref: '#/components/schemas/CaseAssessment'
+            type: array
+          - type: 'null'
+          title: Assessments
+      type: object
+      title: IngestionResponse
+    HTTPValidationError:
+      properties:
+        detail:
           items:
-            anyOf:
-            - type: string
-            - type: integer
+            $ref: '#/components/schemas/ValidationError'
           type: array
-          title: Location
-        msg:
-          type: string
-          title: Message
-        type:
-          type: string
-          title: Error Type
-        input:
-          title: Input
-        ctx:
-          type: object
-          title: Context
+          title: Detail
       type: object
-      required:
-      - loc
-      - msg
-      - type
-      title: ValidationError
-    Operation:
-      type: string
-      enum:
-      - cholecystectomy
-      - hiatal-hernia
-      title: Operation
-      description: List of supported operations.
-    Body_process_embeddings_compat_v1_inference__operation__process_embeddings_post:
-      properties:
-        file:
-          type: string
-          contentMediaType: application/octet-stream
-          title: File
-      type: object
-      required:
-      - file
-      title: Body_process_embeddings_compat_v1_inference__operation__process_embeddings_post
+      title: HTTPValidationError
   securitySchemes:
     HTTPBearer:
       type: http
