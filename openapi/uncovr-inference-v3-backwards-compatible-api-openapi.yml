@@ -74,42 +74,29 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
 components:
   schemas:
-    ValidationError:
+    Operation:
+      type: string
+      enum:
+      - cholecystectomy
+      - hiatal-hernia
+      title: Operation
+      description: List of supported operations.
+    IngestionResponse:
       properties:
-        loc:
-          items:
-            anyOf:
-            - type: string
-            - type: integer
-          type: array
-          title: Location
-        msg:
-          type: string
-          title: Message
-        type:
-          type: string
-          title: Error Type
-        input:
-          title: Input
-        ctx:
-          type: object
-          title: Context
+        report:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Report
+        assessments:
+          anyOf:
+          - items:
+              $ref: '#/components/schemas/CaseAssessment'
+            type: array
+          - type: 'null'
+          title: Assessments
       type: object
-      required:
-      - loc
-      - msg
-      - type
-      title: ValidationError
-    Body_process_embeddings_compat_v1_inference__operation__process_embeddings_post:
-      properties:
-        file:
-          type: string
-          contentMediaType: application/octet-stream
-          title: File
-      type: object
-      required:
-      - file
-      title: Body_process_embeddings_compat_v1_inference__operation__process_embeddings_post
+      title: IngestionResponse
     IngestionErrorResponse:
       properties:
         error_code:
@@ -123,13 +110,16 @@ components:
       - error_code
       - detail
       title: IngestionErrorResponse
-    Operation:
-      type: string
-      enum:
-      - cholecystectomy
-      - hiatal-hernia
-      title: Operation
-      description: List of supported operations.
+    Body_process_embeddings_compat_v1_inference__operation__process_embeddings_post:
+      properties:
+        file:
+          type: string
+          contentMediaType: application/octet-stream
+          title: File
+      type: object
+      required:
+      - file
+      title: Body_process_embeddings_compat_v1_inference__operation__process_embeddings_post
     IngestionAcceptedResponse:
       properties:
         code:
@@ -176,22 +166,6 @@ components:
       - finding
       title: CaseAssessment
       description: A qualitative verdict about one entity/aspect of the case (not a time span).
-    IngestionResponse:
-      properties:
-        report:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Report
-        assessments:
-          anyOf:
-          - items:
-              $ref: '#/components/schemas/CaseAssessment'
-            type: array
-          - type: 'null'
-          title: Assessments
-      type: object
-      title: IngestionResponse
     HTTPValidationError:
       properties:
         detail:
@@ -201,6 +175,32 @@ components:
           title: Detail
       type: object
       title: HTTPValidationError
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
   securitySchemes:
     HTTPBearer:
       type: http
