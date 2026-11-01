@@ -64,6 +64,111 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Uncovr is a company surfaced as a portfolio company of seedcamp and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Uncovr is a surgical AI company building a foundation model for surgery. Its platform captures video from any operating-room source (laparoscopic, robotic, or other devices), analyzes procedures in real time, and automatically generates operative reports, CPT billing codes, and structured clinical intelligence, with a zero-PHI on-device anonymization architecture and EHR integration. Uncovr publishes no developer portal or SDKs, but serves a live OpenAPI 3.1 inference API (with Swagger UI) at api.uncovr.ai, and publishes an llms.txt on its website.
 
-Backed by: seedcamp — http://uncovr.ai
+**Areas:** Company · Healthcare · Surgery · Artificial Intelligence · Computer Vision · Medical Documentation · Medical Billing · Clinical Intelligence
+
+## Uncovr on APIs.io
+
+Everything profiled for Uncovr is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/uncovr/](https://apis.io/providers/uncovr/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Uncovr Inference (V3, Backwards Compatible) API](https://apis.io/apis/uncovr/uncovr-inference-v3-backwards-compatible-api/) — The Inference (V3, Backwards Compatible) API from Uncovr — 1 operation(s) for inference (v3, backwards compatible).
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [uncovr](https://apis.io/servers/uncovr/uncovr/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Uncovr Agentic Access](https://apis.io/agentic-access/uncovr/uncovr-agentic-access/)
+
+#### Collections (1)
+
+Postman and Open Collection request collections.
+
+- [Uncovr Inference (V3, Backwards Compatible) Inference (V3, Backwards Compatible) Inference (V3, Backwards Compatible) API](https://apis.io/collections/uncovr/open-uncovr-inference-v3-backwards-compatible-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Uncovr Api Overlay](https://apis.io/overlays/uncovr/uncovr-api-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Uncovr Authentication](https://apis.io/security/uncovr/uncovr-authentication/)
+- [Uncovr Domain Security](https://apis.io/security/uncovr/uncovr-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.uncovr.ai/)
+- [Support](https://www.uncovr.ai/contact)
+- [Terms of service](https://www.uncovr.ai/legal/terms-conditions)
+- [Privacy policy](https://www.uncovr.ai/legal/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 28.5** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 42.2 |
+| Contract governance | 4.5 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 28.0 |
+| Access clarity | 21.1 |
+
+**Agent readiness 18.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 18.4** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/uncovr/](https://apis.io/providers/uncovr/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Uncovr: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/uncovr/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
